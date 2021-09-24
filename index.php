@@ -40,10 +40,10 @@
   		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block btn-sm">Gửi Confession</button>
 		</form><br>
-		<!-- <?php 
+		 <?php 
 			echo OkMess();
 			echo ErrorMess();
-		?> -->
+		?> 
 	</div>
 </div>
 <div class="footer">

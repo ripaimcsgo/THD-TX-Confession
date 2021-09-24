@@ -20,5 +20,3 @@ function OkMess() {
 		return $Output;
 	}
 }
-
-?>

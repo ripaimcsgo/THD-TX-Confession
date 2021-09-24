@@ -1,42 +1,3 @@
-<!-- <?php 
-	require_once('include/config.php');
-	require_once('include/session.php');
-
-	if (isset($_POST['submit']) || isset($_POST['fileToUpload'])) {
-		$noi_dung = $_POST['content'];
-		global $mysqli;
-		// Lay ten anh
-  		$image = $_FILES['fileToUpload']['name'];
-
-  		// Lay phan duoi cua file
-  		$extension = substr($image, strpos($image, '.') + 1);
-
-  		// Noi luu anh
-  		$target = "uploads/".basename($image);
-
-  		// Kiem tra xem co phai file anh hay khong
-  		if( $extension == "jpg" || $extension == "jpeg" || $extension == "png" ) {
-  			// Chuyen anh vao thu muc uploads
-  			move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target);
-  		}else{
-  			$_SESSION["ErrorMess"] = "File bạn tải lên không phải là file ảnh";
-  		}
-
-  		// Encode the image string data into base64
-		$image_base64 = base64_encode($image);
-
-		// Luu du lieu vao database
-  		$sql = "INSERT INTO `gui_den`(`noi_dung`, `media`) VALUES ('$noi_dung', '$image_base64')";
-  		$mysqli->query($sql);
-
-		if ($mysqli == TRUE) {
-			$_SESSION["OkMess"] = 'Confession của bạn đã được gửi. Hãy đợi quản trị viên duyệt';
-		}else{
-			$_SESSION["ErrorMess"] = "Lỗi mẹ rồi";
-		}
-	}
-?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,8 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>THĐ-TX</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/index.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/reset.css">
+	<script src="https://kit.fontawesome.com/50f10d1d11.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
 	<script src="assets/js/auto.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 <body>
@@ -71,15 +36,18 @@
   		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block btn-sm">Gửi Confession</button>
 		</form><br>
-		<?php 
+		<!-- <?php 
 			echo OkMess();
 			echo ErrorMess();
-		?>
+		?> -->
 	</div>
 </div>
 <div class="footer">
-<p>&copy; <?php echo date("Y"); ?> THPT Trần Hưng Đạo - Thanh Xuân</p><br>
-<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthptthdtxcfs%2F&tabs&width=314&height=214&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=274900842999711" width="314" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<p>&copy;2021 THPT Trần Hưng Đạo - Thanh Xuân</p><br>
+	<div>
+		made with <i class="fas fa-heart"></i> with ..
+	</div>
+	<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthptthdtxcfs%2F&tabs&width=314&height=214&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=274900842999711" width="314" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

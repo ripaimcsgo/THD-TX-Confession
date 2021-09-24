@@ -15,7 +15,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
-	<script src="assets/js/auto.js" type="text/javascript" charset="utf-8" async defer></script>
+	<!-- <script src="assets/js/auto.js" type="text/javascript" charset="utf-8" async defer></script> -->
 </head>
 <body>
 <div id="fb-root"></div>
@@ -32,7 +32,7 @@
 		<form  method="post" enctype="multipart/form-data" action="src/FormDataHandler.php">
 		  <p style="font-size: 20px;"><b>Hãy viết hết những gì bạn muốn đăng xuống phía dưới:</b></p><br>
 		  <div class="form-group" contentEditable="true">
-		    <textarea id="content" rows="7" name="content" type="text" class="form-control" placeholder="Viết vào đây" required></textarea>
+		    <textarea id="content" rows="14" name="content" type="text" class="form-control" placeholder="Viết vào đây" required></textarea>
 		  </div>
 		  <p style="font-size: 20px;"><b>Upload ảnh và video (Nếu có)</b></p><br>
 		  <div class="form-group">

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:index.html
+=======
+>>>>>>> 576741af4c9b3693e8a4ff7f27ac05188f0dff36:index.php
+>>>>>>> b7d8320981c03cc799c4adb76115a8707b1bdf7a
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +11,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>THĐ-TX</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/index.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/reset.css">
+	<script src="https://kit.fontawesome.com/50f10d1d11.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
 	<script src="assets/js/auto.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 <body>
@@ -32,16 +42,34 @@
   		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block btn-sm">Gửi Confession</button>
 		</form><br>
+<<<<<<< HEAD
 		<?php 
 			echo OkMess();
 			echo ErrorMess();
 		?>
+=======
+<<<<<<< HEAD:index.html
+		<!-- <?php 
+			echo OkMess();
+			echo ErrorMess();
+		?> -->
+	</div>
+</div>
+<div class="footer">
+	<p>&copy;2021 THPT Trần Hưng Đạo - Thanh Xuân</p><br>
+	<div>
+		made with <i class="fas fa-heart"></i> with ..
+	</div>
+	<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthptthdtxcfs%2F&tabs&width=314&height=214&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=274900842999711" width="314" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+=======
+>>>>>>> b7d8320981c03cc799c4adb76115a8707b1bdf7a
 	</div>
 </div>
 <div class="footer">
 <p>&copy; <?php echo date("Y"); ?> THPT Trần Hưng Đạo - Thanh Xuân</p><br>
 <p>Current time: <?php $datetime = date('d-m-Y H:i:s'); echo $datetime;?></p>
 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthptthdtxcfs%2F&tabs&width=314&height=214&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=274900842999711" width="314" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+>>>>>>> 576741af4c9b3693e8a4ff7f27ac05188f0dff36:index.php
 </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

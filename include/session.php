@@ -20,12 +20,5 @@ function OkMess() {
 		return $Output;
 	}
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ?>
-=======
-?>
->>>>>>> b7d8320981c03cc799c4adb76115a8707b1bdf7a
-=======
-?>
->>>>>>> b7d8320981c03cc799c4adb76115a8707b1bdf7a

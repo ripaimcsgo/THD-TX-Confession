@@ -23,6 +23,15 @@
 	flex-direction: column;
 }
 
+.footer iframe {
+	margin: auto;
+	padding-top: 15px;
+}
+
+.footer p {
+	padding-top: 15px;
+}
+
 textarea {
 	resize: none;
 	overflow: hidden;

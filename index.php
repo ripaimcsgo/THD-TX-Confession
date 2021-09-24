@@ -1,3 +1,35 @@
+<<<<<<< HEAD:index.html
+=======
+<?php 
+	require_once('include/config.php');
+	require_once('include/session.php');
+
+	if (isset($_POST['submit']) || isset($_POST['fileToUpload'])) {
+		$noi_dung = $_POST['content'];
+		global $mysqli;
+		// Lay ten anh
+  		$image = $_FILES['fileToUpload']['name'];
+
+  		// Lay phan duoi cua file
+  		$extension = substr($image, strpos($image, '.') + 1);
+
+  		// Noi luu anh
+  		$target = "uploads/".basename($image);
+
+  		// Kiem tra xem co phai file anh hay khong
+  		if( $extension == "jpg" || $extension == "jpeg" || $extension == "png" ) {
+  			// Chuyen anh vao thu muc uploads
+  			move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target);
+  		}else{
+  			$_SESSION["ErrorMess"] = "File bạn tải lên không phải là file ảnh";
+  		}
+
+  		// Encode the image string data into base64
+		$image_base64 = base64_encode($image);
+	}
+?>
+
+>>>>>>> 576741af4c9b3693e8a4ff7f27ac05188f0dff36:index.php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +57,7 @@
 
 <div class="container">
 	<div class="section">
-		<form  method="post" enctype="multipart/form-data">
+		<form  method="post" enctype="multipart/form-data" action="functions/getFormData.php">
 		  <p style="font-size: 20px;"><b>Hãy viết hết những gì bạn muốn đăng xuống phía dưới:</b></p><br>
 		  <div class="form-group" contentEditable="true">
 		    <textarea id="content" rows="7" name="content" type="text" class="form-control" placeholder="Viết vào đây" required></textarea>
@@ -36,6 +68,7 @@
   		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block btn-sm">Gửi Confession</button>
 		</form><br>
+<<<<<<< HEAD:index.html
 		<!-- <?php 
 			echo OkMess();
 			echo ErrorMess();
@@ -48,6 +81,14 @@
 		made with <i class="fas fa-heart"></i> with ..
 	</div>
 	<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthptthdtxcfs%2F&tabs&width=314&height=214&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=274900842999711" width="314" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+=======
+	</div>
+</div>
+<div class="footer">
+<p>&copy; <?php echo date("Y"); ?> THPT Trần Hưng Đạo - Thanh Xuân</p><br>
+<p>Current time: <?php $datetime = date('d-m-Y H:i:s'); echo $datetime;?></p>
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthptthdtxcfs%2F&tabs&width=314&height=214&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=274900842999711" width="314" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+>>>>>>> 576741af4c9b3693e8a4ff7f27ac05188f0dff36:index.php
 </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

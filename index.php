@@ -1,32 +1,3 @@
-<?php 
-	require_once('include/config.php');
-	require_once('include/session.php');
-
-	if (isset($_POST['submit']) || isset($_POST['fileToUpload'])) {
-		$noi_dung = $_POST['content'];
-		global $mysqli;
-		// Lay ten anh
-  		$image = $_FILES['fileToUpload']['name'];
-
-  		// Lay phan duoi cua file
-  		$extension = substr($image, strpos($image, '.') + 1);
-
-  		// Noi luu anh
-  		$target = "uploads/".basename($image);
-
-  		// Kiem tra xem co phai file anh hay khong
-  		if( $extension == "jpg" || $extension == "jpeg" || $extension == "png" ) {
-  			// Chuyen anh vao thu muc uploads
-  			move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target);
-  		}else{
-  			$_SESSION["ErrorMess"] = "File bạn tải lên không phải là file ảnh";
-  		}
-
-  		// Encode the image string data into base64
-		$image_base64 = base64_encode($image);
-	}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +21,7 @@
 
 <div class="container">
 	<div class="section">
-		<form  method="post" enctype="multipart/form-data" action="functions/getFormData.php">
+		<form  method="post" enctype="multipart/form-data" action="src/FormDataHandler.php">
 		  <p style="font-size: 20px;"><b>Hãy viết hết những gì bạn muốn đăng xuống phía dưới:</b></p><br>
 		  <div class="form-group" contentEditable="true">
 		    <textarea id="content" rows="7" name="content" type="text" class="form-control" placeholder="Viết vào đây" required></textarea>
@@ -61,6 +32,10 @@
   		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary btn-block btn-sm">Gửi Confession</button>
 		</form><br>
+		<?php 
+			echo OkMess();
+			echo ErrorMess();
+		?>
 	</div>
 </div>
 <div class="footer">

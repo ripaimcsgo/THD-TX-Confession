@@ -1,13 +1,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
-    header('HTTP/1.0 403 Forbidden', TRUE, 403);
+    header('HTTP/1.1 403 Forbidden', TRUE, 403);
     die(header('location: /index.php'));
 }
 require_once '../vendor/autoload.php';
 require_once __DIR__ . '/sendData.php';
 require_once __DIR__ . '/client.php';
-
-
 
 //Confession text data handler
 $input = $_POST["content"];
@@ -39,13 +37,16 @@ if (isset($_FILES['fileToUpload'])) {
 			$url = $send->uploadFile($newfilename, $mimeType);
 			unlink(folder_path . $newfilename);
 		} catch (Exception $e) {
+			header("HTTP/1.1 500 Internal Server Error");
 			exit("lỗi: " . $e->getMessage());
 		}
 	} elseif ($filesize > 20000000) {
+		header("HTTP/1.1 500 Internal Server Error");
 		exit("Lỗi: Kích thước file lớn hơn mức cho phép");
 	} else {
 		// file type error
 		unlink($_FILES["fileToUpload"]["tmp_name"]);
+		header("HTTP/1.1 500 Internal Server Error");
 		exit("Lỗi: Định dạng file không hợp lệ");
 	}
 }
@@ -56,5 +57,6 @@ try {
 	exit ("Gửi confession thành công!");
 
 } catch (Exception $e) {
+	header("HTTP/1.1 500 Internal Server Error");
 	exit ("Đã có lỗi xảy ra khi gửi confession: " . $e->getMessage());
 }

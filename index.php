@@ -23,29 +23,6 @@
 	<!--Favicon -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<!-- Tam thoi disable time di vi nhu lon` 
-	<script type="text/javascript">
-		function startTime() {
-			const today = new Date();
-			let h = today.getHours();
-			let m = today.getMinutes();
-			let s = today.getSeconds();
-			let day = today.getDate();
-			let Month = today.getMonth() + 1;
-			let Year = today.getFullYear();
-			m = checkTime(m);
-			s = checkTime(s);
-			document.getElementById('time').innerHTML = "Current Date: " + day + "/" + Month + "/" + Year + "-" + h + ":" + m + ":" + s;
-			setTimeout(startTime, 1000);
-		}
-
-		function checkTime(i) {
-			if (i < 10) {
-				i = "0" + i
-			}; // add zero in front of numbers < 10
-			return i;
-		}
-	</script>-->
 </head>
 
 <body>
@@ -75,7 +52,8 @@
 					</button>
 				</div>
 				<button type="submit" name="submit" id="filesubmit" class="btn btn-primary btn-block btn-sm">Gửi bài viết</button>
-				<div class="alert alert-primary" id="noti" role="alert"></div>
+				<div class="alert alert-success" role="alert" id='noti'></div>
+				<div class="alert alert-danger" role="alert" id='error_noti'></div>
 			</form><br>
 		</div>
 	</div>

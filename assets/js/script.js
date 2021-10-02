@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('#noti').hide();
+    $('#error_noti').hide();
     function uploadForm() {
         var file_data = $('#fileToUpload').prop('files')[0];
         var form_data = new FormData();
@@ -14,10 +15,19 @@ $(document).ready(function () {
             processData: false,
             data: form_data,
             type: 'POST',
-            success: function (data) {
+            success: function (response) {
                 $('#content').val("")
-                $('#noti').html(data);
-                $('#noti').show();
+                $('#noti').html(response);
+                $('#noti').fadeIn();
+                $('.custom-file-input').siblings(".custom-file-label").html('Chọn file tải lên');
+                $('.custom-file-input').removeClass('selected');
+                $('.custom-file-input').val('');
+                BtnReset('.btn');
+            },
+            error: function (response) {
+                $('#content').val("")
+                $('#error_noti').html(response.responseText);
+                $('#error_noti').fadeIn();
                 $('.custom-file-input').siblings(".custom-file-label").html('Chọn file tải lên');
                 $('.custom-file-input').removeClass('selected');
                 $('.custom-file-input').val('');
@@ -34,6 +44,7 @@ $(document).ready(function () {
     $('.btn').click(function (e) {
         e.preventDefault();
         $('#noti').hide();
+        $('#error_noti').hide();
         $("#cfsform").valid();
         if ($("#cfsform").valid()) {
             BtnLoading('.btn');
